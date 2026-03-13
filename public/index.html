@@ -6,6 +6,7 @@
   <meta name="description" content="A Noisy Little Disaster — JUAKALI + the liminal live at Arcanoa Berlin. April 4, 2026." />
   <meta name="robots" content="noindex, nofollow" />
   <title>A Noisy Little Disaster — 04.04.2026</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -34,7 +35,7 @@
   <section id="hero">
     <div class="hero-top-bar">
       <span class="hero-date mono">04 — 04 — 2026</span>
-      <span class="hero-venue mono">Arcanoa Berlin</span>
+      <a class="hero-venue mono" href="https://maps.app.goo.gl/TKtmqZK3xYwfzwhu8" target="_blank" rel="noopener noreferrer">Arcanoa Berlin</a>
     </div>
 
     <div class="hero-center">
@@ -51,8 +52,9 @@
         <span class="cta-btn__text">Get Tickets</span>
         <span class="cta-btn__bg"></span>
       </a>
-      <span class="hero-scroll-hint mono">scroll</span>
     </div>
+
+    <span class="hero-scroll-hint mono">scroll</span>
 
     <div class="hero-bands-label">
       <span class="mono">JUAKALI</span>
@@ -74,7 +76,7 @@
       </div>
       <div class="info-item" data-reveal>
         <span class="info-label mono">VENUE</span>
-        <p class="info-value">Arcanoa Berlin<br/>Am Tempelhofer Berg 8<br/>Kreuzberg</p>
+        <a class="info-value info-value--link" href="https://maps.app.goo.gl/TKtmqZK3xYwfzwhu8" target="_blank" rel="noopener noreferrer">Arcanoa Berlin<br/>Am Tempelhofer Berg 8<br/>Kreuzberg</a>
       </div>
     </div>
     <div class="info-rule" data-reveal></div>
@@ -84,43 +86,65 @@
   <section id="bands">
     <h2 class="section-label mono" data-reveal>The Acts</h2>
 
-    <!-- JUAKALI -->
-    <div class="band-block band-block--juakali" data-reveal>
-      <div class="band-photo-wrap">
-        <img class="band-photo" src="assets/juakali-photo.png" alt="JUAKALI band photo" loading="lazy" />
-        <div class="band-photo-overlay"></div>
-      </div>
-      <div class="band-info">
-        <img class="band-logo band-logo--juakali" src="assets/juakali-logo.png" alt="JUAKALI logo" />
+    <div class="bands-grid">
+      <!-- JUAKALI -->
+      <div class="band-block band-block--juakali" data-reveal>
+        <div class="band-photo-wrap">
+          <img class="band-photo" src="assets/juakali-photo.png" alt="JUAKALI band photo" loading="lazy" />
+          <div class="band-photo-overlay"></div>
+        </div>
+        <div class="band-info">
+          <span class="band-logo-wrap band-logo-wrap--juakali">
+            <img class="band-logo band-logo--juakali" src="assets/juakali-logo.png" alt="JUAKALI logo" />
+          </span>
         <p class="band-bio">
-          WE PLAY = YOU OKAY<br/>Playing some new songs.
+          Too dense for stoner. Too undead for grunge. Too radical for punk.<br/>
+          Rock music for the devolution.
         </p>
-        <a class="band-ig mono" href="https://www.instagram.com/juakali_official/" target="_blank" rel="noopener noreferrer">
-          <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-          @juakali_official
-        </a>
+          <div class="band-links">
+            <a class="band-ig mono" href="https://www.instagram.com/juakali_official/" target="_blank" rel="noopener noreferrer">
+              <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              Instagram
+            </a>
+            <a class="band-ig mono" href="https://www.youtube.com/channel/UC7_V2HrGqMfX5cLkqLRIj1g" target="_blank" rel="noopener noreferrer">
+              <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
+              YouTube
+            </a>
+            <a class="band-ig mono" href="https://juakaliwtf.bandcamp.com/album/no-choice" target="_blank" rel="noopener noreferrer">
+              <svg class="ig-icon" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M0 12c0 6.627 5.373 12 12 12s12-5.373 12-12S18.627 0 12 0 0 5.373 0 12zm14.258-4.5H7.177L4.5 16.5h7.081l2.677-9z"/></svg>
+              Bandcamp
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
 
-    <div class="band-separator" data-reveal>
-      <span class="mono">×</span>
-    </div>
-
-    <!-- THE LIMINAL -->
-    <div class="band-block band-block--liminal" data-reveal>
-      <div class="band-photo-wrap">
-        <img class="band-photo" src="assets/liminal-photo.png" alt="the liminal band photo" loading="lazy" />
-        <div class="band-photo-overlay"></div>
+      <div class="band-separator" data-reveal>
+        <span class="mono">×</span>
       </div>
-      <div class="band-info">
-        <img class="band-logo band-logo--liminal" src="assets/liminal-logo.png" alt="the liminal logo" />
+
+      <!-- THE LIMINAL -->
+      <div class="band-block band-block--liminal" data-reveal>
+        <div class="band-photo-wrap">
+          <img class="band-photo" src="assets/liminal-photo.png" alt="the liminal band photo" loading="lazy" />
+          <div class="band-photo-overlay"></div>
+        </div>
+        <div class="band-info">
+          <img class="band-logo band-logo--liminal" src="assets/liminal-logo.png" alt="the liminal logo" />
         <p class="band-bio">
-          Berlin based post-desert(?)
+          Heavy riffs. Hypnotic grooves. Otherworldly atmosphere.<br/>
+          the liminal lives in the space between. The liminal is not a band. It is a transition.
         </p>
-        <a class="band-ig mono" href="https://www.instagram.com/the.liminal.berlin/" target="_blank" rel="noopener noreferrer">
-          <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-          @the.liminal.berlin
-        </a>
+          <div class="band-links">
+            <a class="band-ig mono" href="https://www.instagram.com/the.liminal.berlin/" target="_blank" rel="noopener noreferrer">
+              <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              Instagram
+            </a>
+            <a class="band-ig mono" href="https://www.youtube.com/@theliminal-r2v" target="_blank" rel="noopener noreferrer">
+              <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 2C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
+              YouTube
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -134,7 +158,7 @@
         <span>Buy Tickets</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
-      <p class="tickets-sub mono">Arcanoa Berlin · Doors 19:00 · Limited capacity</p>
+      <p class="tickets-sub mono"><a href="https://maps.app.goo.gl/TKtmqZK3xYwfzwhu8" target="_blank" rel="noopener noreferrer">Arcanoa Berlin</a> · Doors 19:00 · Limited capacity</p>
     </div>
   </section>
 
@@ -143,11 +167,11 @@
     <div class="footer-inner">
       <p class="footer-tagline">No sheep. No mercy.</p>
       <div class="footer-links">
-        <a href="https://www.instagram.com/juakali_band" target="_blank" rel="noopener noreferrer" class="mono">JUAKALI ↗</a>
+        <a href="https://www.instagram.com/juakali_official/" target="_blank" rel="noopener noreferrer" class="mono">JUAKALI ↗</a>
         <span class="mono">×</span>
         <a href="https://www.instagram.com/the.liminal.berlin/" target="_blank" rel="noopener noreferrer" class="mono">THE LIMINAL ↗</a>
       </div>
-      <p class="footer-venue mono">Arcanoa Berlin · Am Tempelhofer Berg 8 · Kreuzberg</p>
+      <a class="footer-venue mono" href="https://maps.app.goo.gl/TKtmqZK3xYwfzwhu8" target="_blank" rel="noopener noreferrer">Arcanoa Berlin · Am Tempelhofer Berg 8 · Kreuzberg</a>
       <p class="footer-copy mono">04.04.2026</p>
     </div>
   </footer>

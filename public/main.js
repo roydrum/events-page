@@ -185,15 +185,7 @@ function runLoader() {
 
 // ── Hero Entrance ───────────────────────────────────────────────
 function runHeroEntrance() {
-  // Wrap each line's text in a span for translation
-  document.querySelectorAll('.hero-title .line').forEach(line => {
-    const span = document.createElement('span');
-    span.innerHTML = line.innerHTML;
-    line.innerHTML = '';
-    line.appendChild(span);
-  });
-
-  const tl = gsap.timeline({ defaults: { ease: 'expo.out' } });
+  const tl = gsap.timeline({ defaults: { ease: 'expo.out' }, onComplete: setupHeroParallax });
 
   tl
     .to('.hero-top-bar', { opacity: 1, duration: 0.6 }, 0)
@@ -203,8 +195,6 @@ function runHeroEntrance() {
       stagger: 0.1,
     }, 0.1)
     .to('.hero-at', { opacity: 1, duration: 0.6 }, 0.55)
-    .to('.hero-at', { opacity: 1, duration: 0.6 }, 0.55)
-    .to('.hero-tagline', { opacity: 1, y: 0, duration: 0.8 }, 0.6)
     .to('.cta-btn', { opacity: 1, duration: 0.6 }, 0.8)
     .to('.hero-scroll-hint', { opacity: 1, duration: 0.5 }, 1.0)
     .to('.hero-bands-label', { opacity: 1, duration: 0.6 }, 0.9);
@@ -228,16 +218,6 @@ function setupScrollAnimations() {
     });
   });
 
-  // Info rule
-  gsap.to('.info-rule', {
-    scrollTrigger: {
-      trigger: '.info-rule',
-      start: 'top 90%',
-    },
-    scaleX: 1,
-    duration: 1.2,
-    ease: 'expo.out',
-  });
 
   // Section label
   gsap.to('.section-label', {
@@ -348,8 +328,14 @@ function setupHeroParallax() {
 
 // ── Init ─────────────────────────────────────────────────────────
 window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.hero-title .line').forEach(line => {
+    const span = document.createElement('span');
+    span.innerHTML = line.innerHTML;
+    line.innerHTML = '';
+    line.appendChild(span);
+  });
+
   runLoader();
   setupScrollAnimations();
   setupMagneticButtons();
-  setupHeroParallax();
 });
