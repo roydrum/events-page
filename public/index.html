@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A Noisy Little Disaster — JUAKALI + the liminal live at Arcanoa Berlin. April 4, 2026." />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>A Noisy Little Disaster — 04.04.2026</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@200;300;400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="loader-inner">
+      <span class="loader-line"></span>
+      <p class="loader-text">LOADING</p>
+    </div>
+  </div>
+
+  <!-- WebGL Canvas -->
+  <canvas id="webgl-canvas"></canvas>
+
+  <!-- Noise overlay -->
+  <div class="noise"></div>
+
+  <!-- ═══════════════════════════════ HERO ═══════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-top-bar">
+      <span class="hero-date mono">04 — 04 — 2026</span>
+      <span class="hero-venue mono">Arcanoa Berlin</span>
+    </div>
+
+    <div class="hero-center">
+      <h1 class="hero-title">
+        <span class="line line-1">A Noisy</span>
+        <span class="line line-2">Little</span>
+        <span class="line line-3">Disaster</span>
+      </h1>
+      <p class="hero-at mono">at Arcanoa</p>
+    </div>
+
+    <div class="hero-bottom">
+      <a href="#tickets" class="cta-btn">
+        <span class="cta-btn__text">Get Tickets</span>
+        <span class="cta-btn__bg"></span>
+      </a>
+      <span class="hero-scroll-hint mono">scroll</span>
+    </div>
+
+    <div class="hero-bands-label">
+      <span class="mono">JUAKALI</span>
+      <span class="divider">×</span>
+        <span class="mono">THE LIMINAL</span>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════ EVENT INFO ════════════════════════════ -->
+  <section id="event-info">
+    <div class="info-grid">
+      <div class="info-item" data-reveal>
+        <span class="info-label mono">DATE</span>
+        <p class="info-value">Saturday<br/>April 4, 2026</p>
+      </div>
+      <div class="info-item" data-reveal>
+        <span class="info-label mono">DOORS</span>
+        <p class="info-value">19:00</p>
+      </div>
+      <div class="info-item" data-reveal>
+        <span class="info-label mono">VENUE</span>
+        <p class="info-value">Arcanoa Berlin<br/>Am Tempelhofer Berg 8<br/>Kreuzberg</p>
+      </div>
+    </div>
+    <div class="info-rule" data-reveal></div>
+  </section>
+
+  <!-- ═════════════════════════════ BANDS ═════════════════════════════════ -->
+  <section id="bands">
+    <h2 class="section-label mono" data-reveal>The Acts</h2>
+
+    <!-- JUAKALI -->
+    <div class="band-block band-block--juakali" data-reveal>
+      <div class="band-photo-wrap">
+        <img class="band-photo" src="assets/juakali-photo.png" alt="JUAKALI band photo" loading="lazy" />
+        <div class="band-photo-overlay"></div>
+      </div>
+      <div class="band-info">
+        <img class="band-logo band-logo--juakali" src="assets/juakali-logo.png" alt="JUAKALI logo" />
+        <p class="band-bio">
+          WE PLAY = YOU OKAY<br/>Playing some new songs.
+        </p>
+        <a class="band-ig mono" href="https://www.instagram.com/juakali_official/" target="_blank" rel="noopener noreferrer">
+          <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          @juakali_official
+        </a>
+      </div>
+    </div>
+
+    <div class="band-separator" data-reveal>
+      <span class="mono">×</span>
+    </div>
+
+    <!-- THE LIMINAL -->
+    <div class="band-block band-block--liminal" data-reveal>
+      <div class="band-photo-wrap">
+        <img class="band-photo" src="assets/liminal-photo.png" alt="the liminal band photo" loading="lazy" />
+        <div class="band-photo-overlay"></div>
+      </div>
+      <div class="band-info">
+        <img class="band-logo band-logo--liminal" src="assets/liminal-logo.png" alt="the liminal logo" />
+        <p class="band-bio">
+          Berlin based post-desert(?)
+        </p>
+        <a class="band-ig mono" href="https://www.instagram.com/the.liminal.berlin/" target="_blank" rel="noopener noreferrer">
+          <svg class="ig-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          @the.liminal.berlin
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ TICKET CTA ══════════════════════════════ -->
+  <section id="tickets" data-reveal>
+    <div class="tickets-inner">
+      <p class="tickets-eyebrow mono">April 4 — Kreuzberg</p>
+      <h2 class="tickets-headline">Be There.</h2>
+      <a class="tickets-btn" href="#" target="_blank" rel="noopener noreferrer">
+        <span>Buy Tickets</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <p class="tickets-sub mono">Arcanoa Berlin · Doors 19:00 · Limited capacity</p>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════ FOOTER ════════════════════════════════ -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <p class="footer-tagline">No sheep. No mercy.</p>
+      <div class="footer-links">
+        <a href="https://www.instagram.com/juakali_band" target="_blank" rel="noopener noreferrer" class="mono">JUAKALI ↗</a>
+        <span class="mono">×</span>
+        <a href="https://www.instagram.com/the.liminal.berlin/" target="_blank" rel="noopener noreferrer" class="mono">THE LIMINAL ↗</a>
+      </div>
+      <p class="footer-venue mono">Arcanoa Berlin · Am Tempelhofer Berg 8 · Kreuzberg</p>
+      <p class="footer-copy mono">04.04.2026</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/SplitText.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+  <script src="main.js" type="module"></script>
+</body>
+</html>
