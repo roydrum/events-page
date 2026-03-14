@@ -462,6 +462,45 @@ img { display: block; max-width: 100%; }
   margin-bottom: 2.5rem;
 }
 
+.tickets-pricing {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto 2.5rem;
+}
+
+.pricing-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.pricing-label {
+  color: var(--off-white);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.pricing-line {
+  flex: 1;
+  height: 1px;
+  background: var(--mid);
+  margin-top: 0.15rem;
+}
+
+.pricing-value {
+  color: var(--white);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.pricing-row--door .pricing-value {
+  color: var(--off-white);
+  font-style: italic;
+}
+
 .tickets-btn {
   display: inline-flex;
   align-items: center;
