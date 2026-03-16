@@ -156,31 +156,71 @@ function renderGL() {
 renderGL();
 
 // ── Loader ──────────────────────────────────────────────────────
-function runLoader() {
-  const tl = gsap.timeline({
-    onComplete: () => {
-      document.getElementById('loader').style.display = 'none';
-      runHeroEntrance();
-    }
-  });
+function runLoader(fromPost) {
+  const loaderEl = document.getElementById('loader');
+  const percentEl = document.querySelector('.loader-percent');
+  const continueBtn = document.querySelector('.loader-continue');
 
-  tl
-    .to('.loader-line', {
-      width: '140px',
-      duration: 1.0,
-      ease: 'power3.inOut',
-    })
-    .to('.loader-text', {
-      opacity: 1,
-      duration: 0.4,
-      ease: 'power2.out',
-    }, '-=0.3')
-    .to('#loader', {
-      yPercent: -100,
-      duration: 1.1,
-      ease: 'expo.inOut',
-      delay: 0.4,
+  const onContinue = () => {
+    loaderEl.style.display = 'none';
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    runHeroEntrance();
+  };
+
+  if (fromPost) {
+    continueBtn.addEventListener('click', onContinue);
+
+    const barDuration = 6.4;
+    const proxy = { pct: 0 };
+
+    const tl = gsap.timeline({
+      onComplete: () => {
+        loaderEl.classList.add('loader--done');
+        gsap.to('.loader-done', { opacity: 1, duration: 0.5, ease: 'power2.out' });
+        gsap.to(continueBtn, { opacity: 1, duration: 0.5, ease: 'power2.out', delay: 1.5 });
+      },
     });
+
+    tl
+      .to(proxy, {
+        pct: 100,
+        duration: barDuration,
+        ease: 'power3.inOut',
+        onUpdate: () => {
+          percentEl.textContent = Math.round(proxy.pct) + '%';
+        },
+      }, 0)
+      .to('.loader-bar-fill', {
+        width: '100%',
+        duration: barDuration,
+        ease: 'power3.inOut',
+      }, 0);
+  } else {
+    const tl = gsap.timeline({
+      onComplete: () => {
+        loaderEl.style.display = 'none';
+        runHeroEntrance();
+      },
+    });
+    tl
+      .to('.loader-line', {
+        width: '140px',
+        duration: 1.0,
+        ease: 'power3.inOut',
+      })
+      .to('.loader-text', {
+        opacity: 1,
+        duration: 0.4,
+        ease: 'power2.out',
+      }, '-=0.3')
+      .to('#loader', {
+        yPercent: -100,
+        duration: 1.1,
+        ease: 'expo.inOut',
+        delay: 0.4,
+      });
+  }
 }
 
 // ── Hero Entrance ───────────────────────────────────────────────
@@ -327,7 +367,25 @@ function setupHeroParallax() {
 }
 
 // ── Init ─────────────────────────────────────────────────────────
+if (typeof history !== 'undefined' && history.scrollRestoration) {
+  history.scrollRestoration = 'manual';
+}
+
 window.addEventListener('DOMContentLoaded', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const fromPost = urlParams.get('ok') === '1';
+
+  if (fromPost) {
+    document.getElementById('loader').classList.add('loader--ok');
+    if (window.history.replaceState) {
+      const url = new URL(window.location.href);
+      url.searchParams.delete('ok');
+      window.history.replaceState({}, '', url.pathname + url.search);
+    }
+  }
+
+  runLoader(fromPost);
+
   document.querySelectorAll('.hero-title .line').forEach(line => {
     const span = document.createElement('span');
     span.innerHTML = line.innerHTML;
@@ -335,7 +393,6 @@ window.addEventListener('DOMContentLoaded', () => {
     line.appendChild(span);
   });
 
-  runLoader();
   setupScrollAnimations();
   setupMagneticButtons();
 });

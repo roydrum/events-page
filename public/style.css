@@ -92,6 +92,129 @@ img { display: block; max-width: 100%; }
   gap: 1.5rem;
 }
 
+.loader-content-slot {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  gap: 1.5rem;
+}
+
+#loader.loader--ok .loader-content-slot {
+  display: flex;
+}
+
+.loader-progress-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.loader-bar {
+  display: none;
+  width: 100%;
+  max-width: 320px;
+  height: 6px;
+  background: var(--mid);
+  overflow: hidden;
+}
+
+.loader-bar-fill {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: var(--white);
+}
+
+#loader.loader--ok .loader-bar {
+  display: block;
+}
+
+#loader.loader--ok .loader-line {
+  display: none;
+}
+
+#loader.loader--ok .loader-text {
+  display: none;
+}
+
+.loader-percent {
+  display: none;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--off-white);
+}
+
+#loader.loader--ok .loader-percent {
+  display: block;
+}
+
+.loader-making-text {
+  display: none;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--off-white);
+  text-align: center;
+}
+
+#loader.loader--ok .loader-making-text {
+  display: block;
+}
+
+#loader.loader--ok.loader--done .loader-progress-group {
+  display: none;
+}
+
+.loader-done {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  opacity: 0;
+}
+
+#loader.loader--ok .loader-done {
+  display: flex;
+}
+
+#loader.loader--ok.loader--done .loader-done {
+  opacity: 1;
+}
+
+.loader-done-message {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  text-align: center;
+}
+
+.loader-continue {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--white);
+  background: transparent;
+  border: 1px solid var(--white);
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: background 0.3s var(--ease-expo), color 0.3s var(--ease-expo);
+}
+
+.loader-continue:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
 .loader-line {
   display: block;
   width: 0;

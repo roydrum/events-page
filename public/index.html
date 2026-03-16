@@ -26,6 +26,19 @@
   <!-- Loader -->
   <div id="loader">
     <div class="loader-inner">
+      <div class="loader-content-slot">
+        <div class="loader-progress-group">
+          <div class="loader-bar" aria-hidden="true">
+            <span class="loader-bar-fill"></span>
+          </div>
+          <p class="loader-percent" aria-live="polite">0%</p>
+          <p class="loader-making-text">Making everything ok…</p>
+        </div>
+        <div class="loader-done">
+          <p class="loader-done-message">Everything is now ok!</p>
+          <button type="button" class="loader-continue">Continue</button>
+        </div>
+      </div>
       <span class="loader-line"></span>
       <p class="loader-text">LOADING</p>
     </div>
