@@ -488,14 +488,23 @@ img { display: block; max-width: 100%; }
   gap: 1.25rem;
 }
 
+.band-brand-slot {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  min-height: 52px;
+}
+
 .band-logo-wrap {
   display: inline-block;
 }
 
+.band-brand-slot.band-logo-wrap {
+  display: flex;
+}
+
 .band-logo-wrap--juakali {
-  height: 44px;
   overflow: hidden;
-  display: inline-flex;
   align-items: center;
 }
 
@@ -533,9 +542,6 @@ img { display: block; max-width: 100%; }
   color: var(--white);
   font-weight: 400;
   white-space: nowrap;
-  height: 44px;
-  display: flex;
-  align-items: center;
 }
 
 .band-bio {
@@ -748,10 +754,16 @@ img { display: block; max-width: 100%; }
   .bands-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    align-items: stretch;
     border-bottom: 1px solid var(--mid);
   }
 
   .band-block {
+    display: grid;
+    grid-template-rows: auto minmax(0, 1fr);
+    align-self: stretch;
+    min-height: 0;
     border-bottom: none;
     border-right: 1px solid var(--mid);
   }
@@ -762,10 +774,21 @@ img { display: block; max-width: 100%; }
 
   .band-photo-wrap {
     aspect-ratio: 3 / 4;
+    flex-shrink: 0;
   }
 
   .band-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    min-height: 0;
     padding: 1.5rem 1.25rem 2rem;
+  }
+
+  .band-links {
+    margin-top: auto;
+    flex-shrink: 0;
+    align-self: stretch;
   }
 }
 
