@@ -319,10 +319,13 @@ img { display: block; max-width: 100%; }
 .hero-bands-label {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
   opacity: 0;
   color: var(--off-white);
   margin-bottom: 0.5rem;
+  max-width: 100%;
 }
 
 .hero-bands-label .divider {
@@ -511,6 +514,29 @@ img { display: block; max-width: 100%; }
 .band-logo--liminal {
   filter: invert(1);
   height: 44px;
+}
+
+.band-opener-eyebrow {
+  color: var(--mid);
+  margin-bottom: -0.35rem;
+}
+
+.band-name-display {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 7vw, 3.75rem);
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  font-weight: 400;
+}
+
+.band-block--opener .band-photo {
+  filter: grayscale(20%) contrast(1.08);
+  object-position: center center;
+}
+
+.band-block--opener:hover .band-photo {
+  filter: grayscale(0%) contrast(1.05);
 }
 
 .band-bio {
@@ -733,6 +759,18 @@ img { display: block; max-width: 100%; }
 
   .band-block {
     flex-direction: column;
+  }
+
+  .band-block--opener {
+    grid-column: 1 / -1;
+    border-bottom: 1px solid var(--mid);
+  }
+
+  .band-block--opener .band-info {
+    max-width: 52rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
   }
 
   .band-block--juakali {
