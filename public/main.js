@@ -298,6 +298,18 @@ function setupScrollAnimations() {
     });
   });
 
+  // Band separator
+  gsap.to('.band-separator', {
+    scrollTrigger: {
+      trigger: '.band-separator',
+      start: 'top 88%',
+    },
+    opacity: 1,
+    y: 0,
+    duration: 0.7,
+    ease: 'back.out(1.4)',
+  });
+
   // Tickets section
   gsap.to('#tickets', {
     scrollTrigger: {
