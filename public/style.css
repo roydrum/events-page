@@ -256,6 +256,8 @@ img { display: block; max-width: 100%; }
 .hero-center {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 0.75rem;
 }
 
@@ -284,6 +286,7 @@ img { display: block; max-width: 100%; }
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--off-white);
+  text-align: center;
   opacity: 0;
   margin-top: 0.5rem;
 }
@@ -296,7 +299,7 @@ img { display: block; max-width: 100%; }
 .hero-bottom {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 1.5rem;
 }
 
@@ -320,11 +323,14 @@ img { display: block; max-width: 100%; }
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.5rem 0.75rem;
+  justify-content: center;
+  gap: 0.45rem 0.65rem;
+  width: 100%;
   opacity: 0;
   color: var(--off-white);
   margin-bottom: 0.5rem;
   max-width: 100%;
+  text-align: center;
 }
 
 .hero-bands-label .divider {
@@ -455,6 +461,9 @@ img { display: block; max-width: 100%; }
 }
 
 .band-photo {
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -466,6 +475,34 @@ img { display: block; max-width: 100%; }
 
 .band-block:hover .band-photo {
   transform: scale(1.0);
+}
+
+/* MELO / GOAT: same filled tile as JUAKALI (cover, no letterboxing) */
+.band-photo--tile {
+  object-fit: cover;
+  object-position: center center;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  transform: none;
+}
+
+.band-block:hover .band-photo--tile {
+  transform: none;
+}
+
+/* JUAKALI: cover + anchor low = crops away top of tall source photo */
+.band-photo--juakali-crop {
+  object-fit: cover;
+  object-position: center 82%;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  transform: none;
+}
+
+.band-block:hover .band-photo--juakali-crop {
+  transform: none;
 }
 
 .band-photo-overlay {
@@ -517,7 +554,6 @@ img { display: block; max-width: 100%; }
 
 .band-logo--melo,
 .band-logo--goat {
-  filter: invert(1);
   height: 44px;
   max-width: 100%;
 }
@@ -543,8 +579,12 @@ img { display: block; max-width: 100%; }
 
 .band-links {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1.25rem;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.65rem 1rem;
+  min-width: 0;
+  overflow-x: auto;
+  padding-bottom: 0.15rem;
 }
 
 .band-ig:hover {
@@ -695,8 +735,12 @@ img { display: block; max-width: 100%; }
 .footer-links {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  justify-content: center;
+  gap: 0.65rem 0.85rem;
   flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
 }
 
 .footer-links a {
@@ -707,6 +751,20 @@ img { display: block; max-width: 100%; }
 .footer-links a:hover { color: var(--white); }
 
 .footer-links span { color: var(--mid); }
+
+/* Narrow viewports: slightly tighter type so the band strip fits one line more often; wrapped lines stay centered */
+@media (max-width: 480px) {
+  .hero-bands-label .mono,
+  .footer-links a.mono,
+  .footer-links span.mono {
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
+  }
+
+  .hero-bands-label .divider {
+    font-size: 0.9rem;
+  }
+}
 
 .footer-venue {
   color: var(--off-white);
@@ -744,6 +802,8 @@ img { display: block; max-width: 100%; }
   .band-block {
     flex-direction: column;
     border-right: 1px solid var(--mid);
+    min-height: 0;
+    height: 100%;
   }
 
   .band-block:last-child {
@@ -751,13 +811,20 @@ img { display: block; max-width: 100%; }
   }
 
   .band-photo-wrap {
+    flex-shrink: 0;
     width: 100%;
     aspect-ratio: 3 / 4;
   }
 
   .band-info {
+    flex: 1 1 auto;
+    min-height: 0;
     border-bottom: none;
     padding: 1.5rem 1.25rem 2rem;
+  }
+
+  .band-links {
+    margin-top: auto;
   }
 }
 
@@ -769,18 +836,8 @@ img { display: block; max-width: 100%; }
     padding: 1.5rem 3rem 2rem;
   }
 
-  .hero-center {
-    align-items: center;
-    text-align: center;
-  }
-
   .hero-title {
     font-size: clamp(4rem, min(14vw, 11vh), 16rem);
-  }
-
-  .hero-at {
-    text-align: center;
-    margin-top: 0.5rem;
   }
 
   .hero-bottom {

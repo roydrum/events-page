@@ -284,18 +284,24 @@ function setupScrollAnimations() {
       ease: 'expo.out',
     });
 
-    // Parallax on the photo
+    // Parallax on the photo (skip "fit" images — scale + overflow clips the frame)
     const photo = el.querySelector('.band-photo');
-    gsap.to(photo, {
-      scrollTrigger: {
-        trigger: el,
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: true,
-      },
-      scale: 1.08,
-      ease: 'none',
-    });
+    if (
+      photo &&
+      !photo.classList.contains('band-photo--tile') &&
+      !photo.classList.contains('band-photo--juakali-crop')
+    ) {
+      gsap.to(photo, {
+        scrollTrigger: {
+          trigger: el,
+          start: 'top bottom',
+          end: 'bottom top',
+          scrub: true,
+        },
+        scale: 1.08,
+        ease: 'none',
+      });
+    }
   });
 
   // Tickets section
