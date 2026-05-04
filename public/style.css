@@ -318,11 +318,13 @@ img { display: block; max-width: 100%; }
 
 .hero-bands-label {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem 0.75rem;
   opacity: 0;
   color: var(--off-white);
   margin-bottom: 0.5rem;
+  max-width: 100%;
 }
 
 .hero-bands-label .divider {
@@ -425,6 +427,11 @@ img { display: block; max-width: 100%; }
   padding: 0 0 5rem;
 }
 
+.bands-grid {
+  display: flex;
+  flex-direction: column;
+}
+
 .section-label {
   padding: 1.5rem;
   color: var(--off-white);
@@ -508,9 +515,11 @@ img { display: block; max-width: 100%; }
   filter: invert(1);
 }
 
-.band-logo--liminal {
+.band-logo--melo,
+.band-logo--goat {
   filter: invert(1);
   height: 44px;
+  max-width: 100%;
 }
 
 .band-bio {
@@ -549,18 +558,6 @@ img { display: block; max-width: 100%; }
   flex-shrink: 0;
 }
 
-.band-separator {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem 0;
-  font-family: var(--font-display);
-  font-size: 3rem;
-  color: var(--mid);
-  opacity: 0;
-  transform: translateY(20px);
-}
-
 /* ═══════════════════════════════════════════════════════════════
    TICKETS
 ═══════════════════════════════════════════════════════════════ */
@@ -593,8 +590,8 @@ img { display: block; max-width: 100%; }
   flex-direction: column;
   gap: 0.6rem;
   width: 100%;
-  max-width: 320px;
-  margin: 0 auto 2.5rem;
+  max-width: 360px;
+  margin: 0 auto 1.25rem;
 }
 
 .pricing-row {
@@ -625,6 +622,15 @@ img { display: block; max-width: 100%; }
 .pricing-row--door .pricing-value {
   color: var(--off-white);
   font-style: italic;
+}
+
+.pricing-footnote {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: var(--mid);
+  max-width: 22rem;
+  margin: 0 auto 1.5rem;
+  line-height: 1.5;
 }
 
 .tickets-btn {
@@ -725,32 +731,33 @@ img { display: block; max-width: 100%; }
     padding: 2rem 1.5rem;
   }
 
+  .band-bio {
+    max-width: 30ch;
+  }
+
   .bands-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     border-bottom: 1px solid var(--mid);
   }
 
   .band-block {
     flex-direction: column;
+    border-right: 1px solid var(--mid);
   }
 
-  .band-block--juakali {
-    border-right: 1px solid var(--mid);
+  .band-block:last-child {
+    border-right: none;
   }
 
   .band-photo-wrap {
     width: 100%;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 3 / 4;
   }
 
   .band-info {
     border-bottom: none;
-    padding: 2rem 2rem 2.5rem;
-  }
-
-  .band-separator {
-    display: none;
+    padding: 1.5rem 1.25rem 2rem;
   }
 }
 
@@ -811,7 +818,7 @@ img { display: block; max-width: 100%; }
 
   .band-bio {
     font-size: 1.05rem;
-    max-width: 38ch;
+    max-width: 30ch;
   }
 
   #tickets {
